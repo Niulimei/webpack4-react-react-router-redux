@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var htmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 module.exports = {
@@ -9,6 +9,17 @@ module.exports = {
   performance: {
     hints: false
   },
+  // module:{
+  //   rules:[
+  //     {
+  //       test:/\.css$/,
+  //       use:ExtractTextPlugin.extract({
+  //         fallback:'style-loader',
+  //         use:'css-loader'
+  //       })
+  //     }
+  //   ],
+  // },
   plugins:[
     new htmlWebpackPlugin({
       filename:'index.html',
@@ -21,6 +32,8 @@ module.exports = {
       //     collapseWhitespace:true
       // }
     }),
+    // new ExtractTextPlugin('style.css'),
+   
     new webpack.HotModuleReplacementPlugin(), // 启用热替换模块，也被称为HMR；注意永远不要在生产环境下启用该选项
     new webpack.NamedChunksPlugin(), //  当开启HMR的时候使用该插件会显示模块的相对路径，建议用于开发环境
     // CleanWebpackPlugin 参数传入数组，其中每个元素是每次需要清空的文件目录

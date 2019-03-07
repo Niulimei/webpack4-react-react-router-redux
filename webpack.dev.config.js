@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 const path = require('path');
 var htmlWebpackPlugin = require('html-webpack-plugin');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   mode:'development',
   devtool:'inline-source-map',
